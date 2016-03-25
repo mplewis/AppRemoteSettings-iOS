@@ -13,6 +13,7 @@
 		3617E9651CA5BF48001BCE00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3617E9641CA5BF48001BCE00 /* Assets.xcassets */; };
 		3617E9681CA5BF48001BCE00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3617E9661CA5BF48001BCE00 /* LaunchScreen.storyboard */; };
 		3617E9731CA5BF48001BCE00 /* AppRemoteSettings_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3617E9721CA5BF48001BCE00 /* AppRemoteSettings_ExampleTests.swift */; };
+		3617E97E1CA5C8EC001BCE00 /* NSUserDefaults+AppRemoteSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3617E97D1CA5C8EC001BCE00 /* NSUserDefaults+AppRemoteSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		3617E96E1CA5BF48001BCE00 /* AppRemoteSettings ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AppRemoteSettings ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3617E9721CA5BF48001BCE00 /* AppRemoteSettings_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRemoteSettings_ExampleTests.swift; sourceTree = "<group>"; };
 		3617E9741CA5BF48001BCE00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3617E97D1CA5C8EC001BCE00 /* NSUserDefaults+AppRemoteSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserDefaults+AppRemoteSettings.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		3617E95C1CA5BF48001BCE00 /* AppRemoteSettings Example */ = {
 			isa = PBXGroup;
 			children = (
+				3617E97D1CA5C8EC001BCE00 /* NSUserDefaults+AppRemoteSettings.swift */,
 				3617E95D1CA5BF48001BCE00 /* AppDelegate.swift */,
 				3617E95F1CA5BF48001BCE00 /* ViewController.swift */,
 				3617E9611CA5BF48001BCE00 /* Main.storyboard */,
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3617E9601CA5BF48001BCE00 /* ViewController.swift in Sources */,
+				3617E97E1CA5C8EC001BCE00 /* NSUserDefaults+AppRemoteSettings.swift in Sources */,
 				3617E95E1CA5BF48001BCE00 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
