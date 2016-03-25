@@ -4,66 +4,56 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var settings: NSUserDefaults?
-    var fallbacks = [
+    let settings = NSUserDefaults.standardUserDefaults()
+
+    let appRemoteSettingsURL = "http://localhost:8000/api/v1/"
+    let fallbacks = [
         "ENABLE_RETRO_ENCABULATOR": false,
         "ENCABULATOR_MODE": "conservative",
-        "DEFAULT_FELINE_LIVES": 7
+        "PANAMETRIC_FAN_RPM": 4200
     ]
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        settings = NSUserDefaults.standardUserDefaults()
-        clearSettings()
-        setOfflineFallbacks()
-        fetchRemoteSettings()
-        return true
-    }
 
-    func clearSettings() {
-        guard let keys = settings?.dictionaryRepresentation().keys else {
-            print("Settings isn't ready")
-            return
-        }
-        
-        for key in keys {
-            settings?.removeObjectForKey(key)
-        }
-        settings?.synchronize()
-        
-        print("Cleared settings")
+        // 1. Launch your app
+        //
+        // The first time this app is launched, settings will all be unset. After fetchRemoteSettings fires, these
+        // settings will always be set to the values from AppRemoteSettings.
+        //
+        print("App launched")
         printSettings()
-    }
-    
-    func setOfflineFallbacks() {
-        settings?.registerDefaults(fallbacks)
-        settings?.synchronize()
-        print("Saved offline fallbacks")
+
+        // 2. Register your offline defaults
+        //
+        // registerDefaults has to be called to set defaults on every program launch.
+        // These values are not persisted. They are only used when NSUserDefaults doesn't have a value for a key.
+        //
+        settings.registerDefaults(fallbacks)
+        print("Saved first launch fallbacks")
         printSettings()
-    }
-    
-    func fetchRemoteSettings() {
-        guard let endpoint = NSURL(string: "http://localhost:8000/api/v1/") else {
-            print("Couldn't construct NSURL")
-            return
-        }
         
+        // 3. Update your local settings from AppRemoteSettings
+        //
+        // After defaults are set, fetch settings from AppRemoteSettings and apply them to the NSUserDefaults,
+        // overwriting any keys that may already exist.
+        //
+        let endpoint = NSURL(string: appRemoteSettingsURL)!
         let start = NSDate()
-        settings?.registerDefaultsFromAppRemoteSettings(endpoint) { (remoteSettings) -> Void in
-            print("Saved remote app settings in \(NSDate().timeIntervalSinceDate(start)) sec")
+        settings.updateWithAppRemoteSettings(endpoint) { (remoteSettings) in
+            
+            // At this point, your app's settings are now updated from the server. Values may or may not have changed.
+            print("Fetched remote app settings in \(NSDate().timeIntervalSinceDate(start)) sec")
             self.printSettings()
         }
+        
+        return true
     }
     
     func printSettings() {
-        guard let s = settings else {
-            print("Couldn't print settings")
-            return
-        }
-        
         print("")
-        print("Settings:")
+        print("NSUserDefaults.standardUserDefaults():")
         for key in fallbacks.keys {
-            guard let val = s.valueForKey(key) else {
+            guard let val = settings.valueForKey(key) else {
                 print("    \(key): (unset)")
                 continue
             }
