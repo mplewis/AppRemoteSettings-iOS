@@ -6,6 +6,11 @@ extension NSUserDefaults {
      Updates the values in this NSUserDefaults instance with the values from an AppRemoteSettings server. Any existing
      keys that collide with keys in the AppRemoteSettings data will be replaced with the values from AppRemoteSettings.
      
+     This method should be called as soon as possible in app execution so your settings are up-to-date quickly.
+     You should probably call it in application:didFinishLaunchingWithOptions:.
+     
+     This method will never block or throw an exception.
+     
      - parameter endpointAPIv1: The NSURL to the AppRemoteSettings API v1 endpoint
      - parameter success:       Completion handler fired when remote settings are successfully retrieved. Called with
                                 the settings values received from AppRemoteSettings.
@@ -59,12 +64,12 @@ extension NSUserDefaults {
             do {
                 plist = try NSPropertyListSerialization.propertyListWithData(data, options: [], format: nil) as? NSDictionary
             } catch _ {
-                print("Couldn't parse data as plist")
+                print("Couldn't parse plist data into dictionary")
                 return
             }
             
             guard let remoteSettings = plist as? [String : AnyObject] else {
-                print("Plist was parsed into an unexpected format")
+                print("Plist was parsed into an unexpected dictionary format")
                 return
             }
             
@@ -72,10 +77,14 @@ extension NSUserDefaults {
             for key in remoteSettings.keys {
                 self.setValue(remoteSettings[key], forKey: key)
             }
+            // Save values to disk
             self.synchronize()
+
+            // We're done! Call the completion handler.
             success(remoteSettings: remoteSettings)
         })
         
+        // Start the HTTP POST request
         task.resume()
     }
 
