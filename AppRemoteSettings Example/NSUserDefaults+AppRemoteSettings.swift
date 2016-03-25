@@ -52,7 +52,7 @@ extension NSUserDefaults {
                 return
             }
 
-            if (response.statusCode != 200) {
+            if response.statusCode != 200 {
                 print("Non-200 status code returned: \(response.statusCode)")
                 return
             }
@@ -70,7 +70,9 @@ extension NSUserDefaults {
                 return
             }
             
-            self.registerDefaults(remoteSettings)
+            for key in remoteSettings.keys {
+                self.setValue(remoteSettings[key], forKey: key)
+            }
             self.synchronize()
             success(remoteSettings: remoteSettings)
         })
