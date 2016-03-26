@@ -4,11 +4,17 @@ Update variables in your production iOS apps, live. Skip the lengthy App Store r
 
 For use with the [AppRemoteSettings server](https://github.com/mplewis/AppRemoteSettings).
 
+# Try It Out
+
+Clone this repo and open the Xcode project. Run the app in iOS Simulator, then check the Xcode Console to see how standardUserDefaults gets updated from the server.
+
+[AppDelegate.swift](AppRemoteSettings%20Example/AppDelegate.swift) updates the app's settings on launch from the AppRemoteSettings server.
+
 # Installation
 
 Add [NSUserDefaults+AppRemoteSettings.swift](AppRemoteSettings%20Example/NSUserDefaults%2BAppRemoteSettings.swift) to your project.
 
-I'm not interested in maintaining a CocoaPods project at this time.
+There is no CocoaPods package at this time.
 
 # Usage
 
