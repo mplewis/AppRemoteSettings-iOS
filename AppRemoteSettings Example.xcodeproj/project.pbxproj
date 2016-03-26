@@ -12,19 +12,8 @@
 		3617E9631CA5BF48001BCE00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3617E9611CA5BF48001BCE00 /* Main.storyboard */; };
 		3617E9651CA5BF48001BCE00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3617E9641CA5BF48001BCE00 /* Assets.xcassets */; };
 		3617E9681CA5BF48001BCE00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3617E9661CA5BF48001BCE00 /* LaunchScreen.storyboard */; };
-		3617E9731CA5BF48001BCE00 /* AppRemoteSettings_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3617E9721CA5BF48001BCE00 /* AppRemoteSettings_ExampleTests.swift */; };
 		3617E97E1CA5C8EC001BCE00 /* NSUserDefaults+AppRemoteSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3617E97D1CA5C8EC001BCE00 /* NSUserDefaults+AppRemoteSettings.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		3617E96F1CA5BF48001BCE00 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3617E9521CA5BF48001BCE00 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3617E9591CA5BF48001BCE00;
-			remoteInfo = "AppRemoteSettings Example";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3617E95A1CA5BF48001BCE00 /* AppRemoteSettings Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppRemoteSettings Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,21 +23,11 @@
 		3617E9641CA5BF48001BCE00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3617E9671CA5BF48001BCE00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3617E9691CA5BF48001BCE00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3617E96E1CA5BF48001BCE00 /* AppRemoteSettings ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AppRemoteSettings ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3617E9721CA5BF48001BCE00 /* AppRemoteSettings_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRemoteSettings_ExampleTests.swift; sourceTree = "<group>"; };
-		3617E9741CA5BF48001BCE00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3617E97D1CA5C8EC001BCE00 /* NSUserDefaults+AppRemoteSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserDefaults+AppRemoteSettings.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3617E9571CA5BF48001BCE00 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3617E96B1CA5BF48001BCE00 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -62,7 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				3617E95C1CA5BF48001BCE00 /* AppRemoteSettings Example */,
-				3617E9711CA5BF48001BCE00 /* AppRemoteSettings ExampleTests */,
 				3617E95B1CA5BF48001BCE00 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				3617E95A1CA5BF48001BCE00 /* AppRemoteSettings Example.app */,
-				3617E96E1CA5BF48001BCE00 /* AppRemoteSettings ExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,15 +65,6 @@
 				3617E9691CA5BF48001BCE00 /* Info.plist */,
 			);
 			path = "AppRemoteSettings Example";
-			sourceTree = "<group>";
-		};
-		3617E9711CA5BF48001BCE00 /* AppRemoteSettings ExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				3617E9721CA5BF48001BCE00 /* AppRemoteSettings_ExampleTests.swift */,
-				3617E9741CA5BF48001BCE00 /* Info.plist */,
-			);
-			path = "AppRemoteSettings ExampleTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,24 +87,6 @@
 			productReference = 3617E95A1CA5BF48001BCE00 /* AppRemoteSettings Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3617E96D1CA5BF48001BCE00 /* AppRemoteSettings ExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3617E97A1CA5BF48001BCE00 /* Build configuration list for PBXNativeTarget "AppRemoteSettings ExampleTests" */;
-			buildPhases = (
-				3617E96A1CA5BF48001BCE00 /* Sources */,
-				3617E96B1CA5BF48001BCE00 /* Frameworks */,
-				3617E96C1CA5BF48001BCE00 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3617E9701CA5BF48001BCE00 /* PBXTargetDependency */,
-			);
-			name = "AppRemoteSettings ExampleTests";
-			productName = "AppRemoteSettings ExampleTests";
-			productReference = 3617E96E1CA5BF48001BCE00 /* AppRemoteSettings ExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,10 +99,6 @@
 				TargetAttributes = {
 					3617E9591CA5BF48001BCE00 = {
 						CreatedOnToolsVersion = 7.2.1;
-					};
-					3617E96D1CA5BF48001BCE00 = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = 3617E9591CA5BF48001BCE00;
 					};
 				};
 			};
@@ -170,7 +116,6 @@
 			projectRoot = "";
 			targets = (
 				3617E9591CA5BF48001BCE00 /* AppRemoteSettings Example */,
-				3617E96D1CA5BF48001BCE00 /* AppRemoteSettings ExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -183,13 +128,6 @@
 				3617E9681CA5BF48001BCE00 /* LaunchScreen.storyboard in Resources */,
 				3617E9651CA5BF48001BCE00 /* Assets.xcassets in Resources */,
 				3617E9631CA5BF48001BCE00 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3617E96C1CA5BF48001BCE00 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,23 +144,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3617E96A1CA5BF48001BCE00 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3617E9731CA5BF48001BCE00 /* AppRemoteSettings_ExampleTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3617E9701CA5BF48001BCE00 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3617E9591CA5BF48001BCE00 /* AppRemoteSettings Example */;
-			targetProxy = 3617E96F1CA5BF48001BCE00 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3617E9611CA5BF48001BCE00 /* Main.storyboard */ = {
@@ -349,30 +271,6 @@
 			};
 			name = Release;
 		};
-		3617E97B1CA5BF48001BCE00 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "AppRemoteSettings ExampleTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kesdev.AppRemoteSettings-ExampleTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppRemoteSettings Example.app/AppRemoteSettings Example";
-			};
-			name = Debug;
-		};
-		3617E97C1CA5BF48001BCE00 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "AppRemoteSettings ExampleTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kesdev.AppRemoteSettings-ExampleTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppRemoteSettings Example.app/AppRemoteSettings Example";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -392,14 +290,7 @@
 				3617E9791CA5BF48001BCE00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		3617E97A1CA5BF48001BCE00 /* Build configuration list for PBXNativeTarget "AppRemoteSettings ExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3617E97B1CA5BF48001BCE00 /* Debug */,
-				3617E97C1CA5BF48001BCE00 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
