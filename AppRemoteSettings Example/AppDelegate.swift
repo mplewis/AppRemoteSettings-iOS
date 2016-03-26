@@ -5,8 +5,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    // Point this to your AppRemoteSettings server
-    let appRemoteSettingsURL = "http://localhost:8000/api/v1/"
+    // This is the demo instance of AppRemoteSettings. Point this URL to your own server.
+    let appRemoteSettingsURL = "https://appremotesettings.herokuapp.com/api/v1/"
 
     // Set your variables here during offline development
     let fallbacks = [
