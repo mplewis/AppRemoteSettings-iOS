@@ -19,8 +19,13 @@ extension NSUserDefaults {
 
         // Contact AppRemoteSettings with the app bundle ID so it knows which app we're fetching keys for
         // We will be parsing a plist format response using NSPropertyListSerialization
+        let bundle = NSBundle.mainBundle()
         let params = [
-            "app_id": NSBundle.mainBundle().bundleIdentifier!,
+            "app_id": bundle.bundleIdentifier!,
+            "build_number": bundle.objectForInfoDictionaryKey("CFBundleVersion") as! String,
+            "app_version": bundle.objectForInfoDictionaryKey("CFBundleShortVersionString") as! String,
+            "os_version": NSProcessInfo.processInfo().operatingSystemVersionString,
+            "hardware": systemInfoMachine(),
             "format": "plist"
         ]
 
@@ -88,4 +93,19 @@ extension NSUserDefaults {
         task.resume()
     }
 
+}
+
+/**
+ Read the iOS systeminfo.machine variable. <a href="http://stackoverflow.com/a/26962452/254187">Source</a>
+ - returns: the value of systemInfo.machine as a String, e.g. "iPhone8,2"
+ */
+private func systemInfoMachine() -> String {
+    var systemInfo = utsname()
+    uname(&systemInfo)
+    let machineMirror = Mirror(reflecting: systemInfo.machine)
+    let identifier = machineMirror.children.reduce("") { identifier, element in
+        guard let value = element.value as? Int8 where value != 0 else { return identifier }
+        return identifier + String(UnicodeScalar(UInt8(value)))
+    }
+    return identifier
 }
