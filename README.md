@@ -19,7 +19,7 @@ There is no CocoaPods package at this time.
 # Usage
 
 1. [Register your default settings](AppRemoteSettings%20Example/AppDelegate.swift#L27-L35) in your AppDelegate
-2. [Call `NSUserDefaults.standardUserDefaults().updateWithAppRemoteSettings(...)`](AppRemoteSettings%20Example/AppDelegate.swift#L40-L44) in your AppDelegate
+2. Call [`NSUserDefaults.standardUserDefaults().updateWithAppRemoteSettings(...)`](AppRemoteSettings%20Example/AppDelegate.swift#L40-L44) in your AppDelegate
 3. Replace your hardcoded variables with values from `NSUserDefaults.standardUserDefaults()`
 4. Change values in the AppRemoteSettings Dashboard to update them in your production apps.
 
